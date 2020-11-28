@@ -1,0 +1,30 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2VuYWQiLCJpYXQiOjE2MDY1ODU2NzQsImV4cCI6MTYwNjU4NTcwNH0.VzL7ZsxGlzeHtdGfrn_oZu74E0HzcmVN1UGWyIlCioA
+
+###
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2VuYWQiLCJpYXQiOjE2MDY1ODQyNzIsImV4cCI6MTYwNjU4NDI4N30.cVbIZIE0bfixuRhdSUop_Uuu_0TTwecHEK6CKNONfq0
+
+###
+POST  http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username": "Senad"
+}
+
+###
+DELETE http://localhost:4000/logout
+{
+    "token":
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2VuYWQiLCJpYXQiOjE2MDY1ODU1Nzl9.WOTwYWCRW80nkXEWUcoT-mfdX0WPxvg8ThGnoBoEpe0"
+}
+
+###
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+    "token": 
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2VuYWQiLCJpYXQiOjE2MDY1ODU1Nzl9.WOTwYWCRW80nkXEWUcoT-mfdX0WPxvg8ThGnoBoEpe0"
+}
