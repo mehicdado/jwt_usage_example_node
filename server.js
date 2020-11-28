@@ -8,7 +8,7 @@ app.use(express.json())
 const posts = [
     {
         username: 'Damir',
-        title: 'This is post one 1!'
+        title: 'This is post one!'
     },
     {
         username: 'Senad',
@@ -17,7 +17,7 @@ const posts = [
 ]
 
 app.get('/posts', authenticateToken, (req, res) => {
-    //Return post only for user logged in.
+    //Return post only for currently logged in user.
     res.json(posts.filter(post => post.username === req.user.name))
 })
 
@@ -25,13 +25,7 @@ function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization']
     //authenticate Token
     //format of the authHeader is Bearer TOKEN
-    //const token = authHeader && authHeader.split(' ')[1]
-    let token = ''
-    if (authHeader !== '') {
-        token = authHeader.split(' ')[1]
-    } else {
-        token = null
-    }
+    const token = authHeader && authHeader.split(' ')[1]
 
     if (token == null) return res.sendStatus(401)
     
